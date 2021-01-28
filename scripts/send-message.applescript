@@ -1,8 +1,8 @@
-on run {targetBuddyPhone, targetMessage}
+on run {phoneNumber, textMessage}
     tell application "Messages"
         set targetService to 1st service whose service type = iMessage
-        set targetBuddy to buddy targetBuddyPhone of targetService
-        send targetMessage to targetBuddy
+        set receiver to buddy phoneNumber of targetService
+        send textMessage to receiver
     end tell
 end run
 
