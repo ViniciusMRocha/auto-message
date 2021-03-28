@@ -4,7 +4,7 @@ import json
 import pprint
 
 
-TODAYS_MESSAGE = 'Beth and I will be placing an order in the next couple of days. Is there anything you would like?'
+TODAYS_MESSAGE = 'hope all is well! Beth and I will placing our order for this month on Saturday. Is there anything you would like us to order for you?'
 # TODO: Account for non iMessages (text)
 SCRIPT = 'send-message.applescript'
 
@@ -32,17 +32,12 @@ def send_messages(data):
 
 if __name__ == "__main__":
 
-    # Real data
-    with open('../data/contact-list.json', 'r') as file:
-        data = json.load(file)
-        pprint.pprint(data)
-
-    # # Test
-    # data = {
-    #     "list": [
-    #         {"send": "Y", "name": "Vini", "number": "17607990511"},
-    #         {"send": "N", "name": "Beth", "number": "17609025715"}
-    #     ]
-    # }
+    # Test
+    data = {
+        "list": [
+            {"send": "Y", "name": "Vini", "number": "17607990511"},
+            {"send": "Y", "name": "Beth", "number": "17609025715"}
+        ]
+    }
 
     send_messages(data)
